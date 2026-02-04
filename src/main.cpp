@@ -1,4 +1,5 @@
 #include "help.h"
+#include "init.h"
 #include <cstdio>
 #include <cstring>
 
@@ -8,7 +9,8 @@ typedef struct {
   int (*handler)(int, char **);
 } command;
 
-command commands[] = {{"--help", "Prints usage", help}};
+command commands[] = {{"--help", "Prints usage", help},
+                      {"init", "Initialises a .dd/ directory", dd_init}};
 
 int main(int argc, char *argv[]) {
   for (const command &x : commands) {
