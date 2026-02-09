@@ -14,6 +14,7 @@ command commands[] = {
     {"--help", "Prints usage", help},
     {"init", "Initialises a .dd/ directory", dd_init},
     {"hash-object", "Hashes a given file", hash_object},
+    {"add", "adds entries to index", add},
 };
 
 int main(int argc, char *argv[]) {
