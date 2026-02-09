@@ -1,8 +1,8 @@
 #include "object.h"
+#include "add.h"
 #include "hash.h"
 #include <cstdint>
 #include <filesystem>
-#include <iostream>
 #include <stdexcept>
 #include <string>
 #include <vector>
@@ -33,7 +33,8 @@ std::filesystem::path object_path_from_hash(const std::string &hash) {
 }
 
 std::string write_object(const object &obj) {
-  std::filesystem::path DD_DIR = ".dd/";
+  std::filesystem::path base = find_base();
+  std::filesystem::path DD_DIR = base / ".dd/";
   if (!std::filesystem::exists(DD_DIR)) {
     throw std::runtime_error("Not a dd repository");
   }

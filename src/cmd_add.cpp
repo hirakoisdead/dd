@@ -1,4 +1,10 @@
+#include "cmd_add.h"
+#include "blob.h"
+#include "index.h"
+#include "object.h"
 #include <filesystem>
+#include <string>
+#include <vector>
 
 int cmd_add(const std::vector<std::filesystem::path> &paths,
             const std::filesystem::path &base) {

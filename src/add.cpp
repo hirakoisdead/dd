@@ -1,5 +1,10 @@
 #include "add.h"
 #include "cmd_add.h"
+#include <cstdio>
+#include <filesystem>
+#include <iostream>
+#include <stdexcept>
+#include <vector>
 
 int add(int argc, char *argv[]) {
   if (argc < 2) {
@@ -43,6 +48,8 @@ std::filesystem::path find_base() {
       cwd = cwd.parent_path();
     }
   }
+
+  std::cout << "hihi";
   throw std::runtime_error(
       "not a dd repository(or any of the parent directories)");
 }

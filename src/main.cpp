@@ -1,3 +1,4 @@
+#include "add.h"
 #include "hash_object.h"
 #include "help.h"
 #include "init.h"
