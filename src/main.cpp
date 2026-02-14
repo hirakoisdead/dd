@@ -2,6 +2,7 @@
 #include "hash_object.h"
 #include "help.h"
 #include "init.h"
+#include "write_tree.h"
 #include <cstdio>
 #include <cstring>
 
@@ -16,6 +17,7 @@ command commands[] = {
     {"init", "Initialises a .dd/ directory", dd_init},
     {"hash-object", "Hashes a given file", hash_object},
     {"add", "adds entries to index", add},
+    {"write-tree", "writes tree to object storage", write_tree},
 };
 
 int main(int argc, char *argv[]) {
