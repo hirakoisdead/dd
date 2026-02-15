@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 
-dir_node build_node(const index &index) {
+dir_node build_node(const Index &index) {
   std::vector<std::string> path_items;
   dir_node node;
   dir_node *node_ptr;
@@ -59,7 +59,7 @@ std::string write_tree(const dir_node &node) {
   return tree_hash;
 }
 
-std::string root_tree_from_index(const index &index) {
+std::string root_tree_from_index(const Index &index) {
   dir_node root_node = build_node(index);
   std::string root_hash = write_tree(root_node);
   return root_hash;

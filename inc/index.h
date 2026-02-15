@@ -10,8 +10,8 @@ typedef struct {
 
 typedef struct {
   std::vector<index_entry> entries;
-} index;
+} Index;
 
-index load_index();
-void write_index(const index &index);
-void index_add(index &index, const std::string &path, const std::string &hash);
+Index load_index();
+void write_index(const Index &index);
+void index_add(Index &index, const std::string &path, const std::string &hash);

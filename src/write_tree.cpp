@@ -8,7 +8,7 @@ int write_tree(int argc, char *argv[]) {
   (void)argc;
   (void)argv;
 
-  index index = load_index();
+  Index index = load_index();
   std::string hash = root_tree_from_index(index);
   std::cout << hash;
   return 0;

@@ -8,7 +8,7 @@
 
 int cmd_add(const std::vector<std::filesystem::path> &paths,
             const std::filesystem::path &base) {
-  index index = load_index();
+  Index index = load_index();
   for (const auto &x : paths) {
     if (!std::filesystem::exists(base / x) ||
         !std::filesystem::is_regular_file(base / x)) {

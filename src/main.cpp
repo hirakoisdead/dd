@@ -1,4 +1,5 @@
 #include "add.h"
+#include "cmd_commit.h"
 #include "hash_object.h"
 #include "help.h"
 #include "init.h"
@@ -18,6 +19,7 @@ command commands[] = {
     {"hash-object", "Hashes a given file", hash_object},
     {"add", "adds entries to index", add},
     {"write-tree", "writes tree to object storage", write_tree},
+    {"commit", "stores tree snapshots in object storage", commit},
 };
 
 int main(int argc, char *argv[]) {

@@ -2,13 +2,13 @@
 #include <stdexcept>
 #include <string>
 
-index load_index() {
-  index idx;
+Index load_index() {
+  Index idx;
   const char *INDEX = ".dd/index";
   FILE *fp = fopen(INDEX, "r");
   // empty index
   if (!fp) {
-    return index();
+    return idx;
   }
   char buffer[512];
   // read line by line
@@ -43,7 +43,7 @@ index load_index() {
   return idx;
 }
 
-void write_index(const index &index) {
+void write_index(const Index &index) {
   const char *path = ".dd/index";
   FILE *index_fp = fopen(path, "w");
   if (index_fp == NULL) {
@@ -61,7 +61,7 @@ void write_index(const index &index) {
   }
 }
 
-void index_add(index &index, const std::string &path, const std::string &hash) {
+void index_add(Index &index, const std::string &path, const std::string &hash) {
   for (auto &x : index.entries) {
     if (x.path == path) {
       x.hash = hash;
