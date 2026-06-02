@@ -2,6 +2,7 @@
 #include "object.h"
 #include <cstdint>
 #include <cstdio>
+#include <stdexcept>
 #include <string>
 
 object serialise_commit(const Commit &commit) {

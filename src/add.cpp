@@ -49,7 +49,6 @@ std::filesystem::path find_base() {
     }
   }
 
-  std::cout << "hihi";
   throw std::runtime_error(
       "not a dd repository(or any of the parent directories)");
 }

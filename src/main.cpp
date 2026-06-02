@@ -1,5 +1,6 @@
 #include "add.h"
 #include "cmd_commit.h"
+#include "cmd_log.h"
 #include "hash_object.h"
 #include "help.h"
 #include "init.h"
@@ -20,6 +21,7 @@ command commands[] = {
     {"add", "adds entries to index", add},
     {"write-tree", "writes tree to object storage", write_tree},
     {"commit", "stores tree snapshots in object storage", commit},
+    {"log", "Shows the commits in correct order", log},
 };
 
 int main(int argc, char *argv[]) {
