@@ -17,3 +17,4 @@ std::string get_current_branch();
 std::string get_current_commit_hash();
 void update_branch_ref(const std::string &branch,
                        const std::string &commit_hash);
+Commit load_commit(const std::string &hash);

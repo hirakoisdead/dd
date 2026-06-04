@@ -1,4 +1,5 @@
 #include "add.h"
+#include "cmd_checkout.h"
 #include "cmd_commit.h"
 #include "cmd_log.h"
 #include "hash_object.h"
@@ -22,6 +23,7 @@ command commands[] = {
     {"write-tree", "writes tree to object storage", write_tree},
     {"commit", "stores tree snapshots in object storage", commit},
     {"log", "Shows the commits in correct order", log},
+    {"checkout", "Matches the files on disk to the snapshot", checkout},
 };
 
 int main(int argc, char *argv[]) {

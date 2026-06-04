@@ -38,3 +38,64 @@ object serialise_tree(const tree &tree) {
 bool compare_by_name(const tree_entry &a, const tree_entry &b) {
   return a.name < b.name;
 }
+
+tree parse_tree_object(const object &obj) {
+  if (obj.type != "tree") {
+    throw std::runtime_error("Object is not a tree");
+  }
+
+  tree tree;
+
+  size_t pos = 0;
+
+  while (pos < obj.data.size()) {
+
+    size_t start = pos;
+    while (pos < obj.data.size() && obj.data[pos] != ' ') {
+      pos++;
+    }
+    if (pos == obj.data.size()) {
+      throw std::runtime_error("Invalid tree object");
+    }
+
+    std::string type(obj.data.begin() + static_cast<std::ptrdiff_t>(start),
+                     obj.data.begin() + static_cast<std::ptrdiff_t>(pos));
+    pos++;
+
+    start = pos;
+    while (pos < obj.data.size() && obj.data[pos] != '\0') {
+      pos++;
+    }
+    if (pos == obj.data.size()) {
+      throw std::runtime_error("Invalid tree object");
+    }
+
+    std::string name(obj.data.begin() + static_cast<std::ptrdiff_t>(start),
+                     obj.data.begin() + static_cast<std::ptrdiff_t>(pos));
+    pos++;
+
+    std::string hash(obj.data.begin() + static_cast<std::ptrdiff_t>(pos),
+                     obj.data.begin() + static_cast<std::ptrdiff_t>(pos) + 40);
+    pos += 40;
+
+    tree_entry entry;
+    entry.name = name;
+    entry.hash = hash;
+    if (type == "blob") {
+      entry.type = tree_entry_type::blob;
+    } else if (type == "tree") {
+      entry.type = tree_entry_type::tree;
+    } else {
+      throw std::runtime_error("Invalid object type");
+    }
+
+    tree.entries.push_back(entry);
+  }
+
+  return tree;
+}
+
+tree load_tree(const std::string &hash) {
+  object obj = read_object(hash);
+  return parse_tree_object(obj);
+}

@@ -1,4 +1,5 @@
 #include "commit.h"
+#include "log.h"
 #include "object.h"
 #include <cstdint>
 #include <cstdio>
@@ -56,7 +57,7 @@ std::string get_current_branch() {
   }
 
   if (fscanf(HEAD, "ref: refs/heads/%s", c_branch) != 1) {
-    throw std::runtime_error("Error reading file");
+    throw std::runtime_error("Error reading file.");
   }
   std::string branch = c_branch;
 
@@ -112,4 +113,9 @@ void update_branch_ref(const std::string &branch,
   if (rename(c_tmp, c_path) != 0) {
     std::perror("Error renaming file");
   }
+}
+
+Commit load_commit(const std::string &hash) {
+  object obj = read_object(hash);
+  return parse_commit_object(obj);
 }

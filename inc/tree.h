@@ -15,8 +15,9 @@ typedef struct {
 
 typedef struct {
   std::vector<tree_entry> entries;
-
 } tree;
 
 object serialise_tree(const tree &tree);
 bool compare_by_name(const tree_entry &a, const tree_entry &b);
+tree parse_tree_object(const object &obj);
+tree load_tree(const std::string &hash);
