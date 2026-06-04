@@ -1,4 +1,5 @@
 #include "add.h"
+#include "cmd_branch.h"
 #include "cmd_checkout.h"
 #include "cmd_commit.h"
 #include "cmd_log.h"
@@ -24,6 +25,7 @@ command commands[] = {
     {"commit", "stores tree snapshots in object storage", commit},
     {"log", "Shows the commits in correct order", log},
     {"checkout", "Matches the files on disk to the snapshot", checkout},
+    {"branch", "Lists all the branches", branch},
 };
 
 int main(int argc, char *argv[]) {
