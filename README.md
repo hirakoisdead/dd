@@ -21,7 +21,7 @@ A Git-inspired version control system written in C++ for Linux.
 ## Repository Layout
 
 ```text
-.vcs/
+.dd/
 ├── objects/
 │
 ├── refs/
