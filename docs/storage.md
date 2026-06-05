@@ -7,7 +7,7 @@ This document describes how repository data is represented and stored inside `dd
 All repository data is stored as immutable objects inside:
 
 ```text
-.vcs/objects/
+.dd/objects/
 ```
 
 Each object is identified by a SHA-1 hash derived from its contents.
@@ -15,7 +15,7 @@ Each object is identified by a SHA-1 hash derived from its contents.
 Objects are stored using the following layout:
 
 ```text
-.vcs/objects/ab/cdef1234...
+.dd/objects/ab/cdef1234...
 ```
 
 Where:
@@ -163,7 +163,7 @@ The index acts as the staging area.
 Location:
 
 ```text
-.vcs/index
+.dd/index
 ```
 
 Each entry maps:
