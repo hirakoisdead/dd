@@ -18,30 +18,6 @@ A Git-inspired version control system written in C++ for Linux.
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/614d3fe9-7ee3-44cf-82be-8e62d591b111" />
 
-## Repository Layout
-
-```text
-.dd/
-├── objects/
-│
-├── refs/
-│   └── heads/
-│
-├── HEAD
-├── index
-└── config
-```
-
-### Components
-
-| Component   | Purpose                              |
-| ----------- | ------------------------------------ |
-| objects/    | Stores all immutable objects         |
-| refs/heads/ | Branch references                    |
-| HEAD        | Current checked-out branch or commit |
-| index       | Staging area                         |
-| config      | Repository configuration             |
-
 ## Documentation
 
 * [Architecture](docs/architecture.md) — Overview of the repository design, object model, and component relationships.
@@ -117,6 +93,30 @@ dd checkout dev
 ```bash
 dd checkout <commit_hash>
 ```
+
+## Repository Layout
+
+```text
+.dd/
+├── objects/
+│
+├── refs/
+│   └── heads/
+│
+├── HEAD
+├── index
+└── config
+```
+
+### Components
+
+| Component   | Purpose                              |
+| ----------- | ------------------------------------ |
+| objects/    | Stores all immutable objects         |
+| refs/heads/ | Branch references                    |
+| HEAD        | Current checked-out branch or commit |
+| index       | Staging area                         |
+| config      | Repository configuration             |
 
 ## Key Learnings
 
