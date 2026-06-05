@@ -42,6 +42,11 @@ A Git-inspired version control system written in C++ for Linux.
 | index       | Staging area                         |
 | config      | Repository configuration             |
 
+## Documentation
+
+* [Architecture](docs/architecture.md) — Overview of the repository design, object model, and component relationships.
+* [Storage Format](docs/storage.md) — Details of blob, tree, commit, and index storage formats.
+
 ## Building
 
 ### Requirements
