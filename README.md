@@ -16,7 +16,7 @@ A Git-inspired version control system written in C++ for Linux.
 
 ## Example Usage
 
-img
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/614d3fe9-7ee3-44cf-82be-8e62d591b111" />
 
 ## Repository Layout
 
